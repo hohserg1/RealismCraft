@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "normal": { "model": "realism:blockworkbench" },
+    "inventory": { "model": "realism:blockworkbench" }
+  }
+}

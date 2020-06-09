@@ -2,6 +2,7 @@ package com.legendgamer.realism.proxy;
 
 import javax.annotation.Nullable;
 
+import com.legendgamer.realism.client.render.tile.TileWorkbenchRenderer;
 import com.legendgamer.realism.reg.BlocksList;
 import com.legendgamer.realism.reg.RegBlocks;
 import com.legendgamer.realism.reg.RegEvents;
@@ -9,6 +10,7 @@ import com.legendgamer.realism.reg.RegFluids;
 import com.legendgamer.realism.reg.RegItems;
 import com.legendgamer.realism.reg.RegRenderMetaBlocks;
 
+import com.legendgamer.realism.tile.TileWorkbench;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
@@ -18,6 +20,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -66,6 +69,8 @@ public class ClientProxy extends CommonProxy {
 		,BlocksList.REAL_SPRUCE_LEAVES,BlocksList.REAL_SPRUCE_SAPLING
 		,BlocksList.REAL_POPLAR_LEAVES,BlocksList.REAL_POPLAR_SAPLING
 				);
+
+		ClientRegistry.bindTileEntitySpecialRenderer(TileWorkbench.class, new TileWorkbenchRenderer());
 		
 		super.init(event);
 	}
